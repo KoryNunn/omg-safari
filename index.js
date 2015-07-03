@@ -1,2 +1,4 @@
-require('./pasteEventsFix');
-require('./selectFix');
+module.exports = function(){
+    require('./pasteEventsFix')();
+    require('./selectFix')();
+};

@@ -31,7 +31,7 @@ function updateTarget(target) {
     },50);
 }
 
-function init(){
+module.exports = function(){
 
     document.addEventListener('DOMNodeInserted', function(event){
         updateTarget(event.target);
@@ -54,4 +54,4 @@ function init(){
     }, true);
 
     updateTarget(document);
-}
+};

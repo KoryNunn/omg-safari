@@ -1,26 +1,29 @@
 // Safari doesn't trigger 'change' events when you paste.
 // Just trigger a keyup on 'a'. Safari wont put 'a' in the box..
 
-document.addEventListener('paste', function(event) {
-    var target = event.target;
+module.exports = function(){
 
-    setTimeout(function(){
-        var virtualEvent = new KeyboardEvent('keyup');
+    document.addEventListener('paste', function(event) {
+        var target = event.target;
 
-        virtualEvent.initKeyboardEvent(
-            'keyup', 
-            true, 
-            true, 
-            window, 
-            'a',
-            3,
-            true,
-            false,
-            true,
-            false,
-            false
-        );
+        setTimeout(function(){
+            var virtualEvent = new KeyboardEvent('keyup');
 
-        target.dispatchEvent(virtualEvent);
-    },50);
-});
+            virtualEvent.initKeyboardEvent(
+                'keyup', 
+                true, 
+                true, 
+                window, 
+                'a',
+                3,
+                true,
+                false,
+                true,
+                false,
+                false
+            );
+
+            target.dispatchEvent(virtualEvent);
+        },50);
+    });
+};
