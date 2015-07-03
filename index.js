@@ -1,0 +1,2 @@
+require('./pasteEventsFix');
+require('./selectFix');
