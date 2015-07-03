@@ -31,28 +31,27 @@ function updateTarget(target) {
     },50);
 }
 
-document.addEventListener('DOMNodeInserted', function(event){
-    updateTarget(event.target);
-}, true);
+function init(){
 
-document.addEventListener('change', function(event){
-    if(
-        event.target.tagName = 'SELECT' &&
-        event.target.selectedOptions.length && 
-        event.target._dumbshitOption && 
-        event.target._dumbshitOption.parentElement &&
-        (
-            event.target.selectedOptions[0]._isDumbshitOption || 
-            event.target.value
-        )
-    ){
-        event.target._dumbshitOption.parentElement.removeChild(event.target._dumbshitOption);
-        event.target._dumbshitOption = null;
-    }
-}, true);
+    document.addEventListener('DOMNodeInserted', function(event){
+        updateTarget(event.target);
+    }, true);
 
-window.addEventListener('load', function(event){
+    document.addEventListener('change', function(event){
+        if(
+            event.target.tagName = 'SELECT' &&
+            event.target.selectedOptions.length && 
+            event.target._dumbshitOption && 
+            event.target._dumbshitOption.parentElement &&
+            (
+                event.target.selectedOptions[0]._isDumbshitOption || 
+                event.target.value
+            )
+        ){
+            event.target._dumbshitOption.parentElement.removeChild(event.target._dumbshitOption);
+            event.target._dumbshitOption = null;
+        }
+    }, true);
+
     updateTarget(document);
-});
-
-updateTarget(document);
+}

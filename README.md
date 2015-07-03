@@ -19,7 +19,13 @@ Fucking horrible hacks to make safari work similar to a decent browser.
 You know what just have dirty horrible hacks...
 
 ```
-require('omg-safari'); // Done..
+
+var stopBeingShit = require('omg-safari'); 
+
+window.onload = function(){
+    stopBeingShit(); // Done..
+};
+
 ```
 
 ## Todo
