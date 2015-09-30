@@ -4,13 +4,13 @@
 
 function fuckifySelect(select){
     if(
-        select.tagName !== 'SELECT' || 
+        select.tagName !== 'SELECT' ||
         select.selectedIndex !== -1
     ){
         return;
     }
 
-    if(!select.options[0] || !select.options[0]._isDumbshitOption){    
+    if(!select.options[0] || !select.options[0]._isDumbshitOption){
         var blank = document.createElement('option');
         blank._isDumbshitOption = true;
 
@@ -39,12 +39,12 @@ module.exports = function(){
 
     document.addEventListener('change', function(event){
         if(
-            event.target.tagName = 'SELECT' &&
-            event.target.selectedOptions.length && 
-            event.target._dumbshitOption && 
+            event.target.tagName === 'SELECT' &&
+            event.target.selectedOptions.length &&
+            event.target._dumbshitOption &&
             event.target._dumbshitOption.parentElement &&
             (
-                event.target.selectedOptions[0]._isDumbshitOption || 
+                event.target.selectedOptions[0]._isDumbshitOption ||
                 event.target.value
             )
         ){
