@@ -1,12 +1,24 @@
 {
   "name": "omg-safari",
   "version": "1.1.2",
-  "description": "",
+  "description": "OMG SAFARI JSUT STOP BEING SHIT!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "watchify test/index.js -o test/index.browser.js"
   },
   "author": "Kory Nunn <knunn187@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KoryNunn/omg-safari.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/KoryNunn/omg-safari/issues"
+  },
+  "homepage": "https://github.com/KoryNunn/omg-safari#readme"
 }
